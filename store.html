@@ -109,7 +109,7 @@
     const sum4 = Number(document.querySelector('#sum4').innerHTML);
 
     let sumAll = 0;
-    // let done = document.querySelector("#done");
+
     function sumPrice() {
       sumAll = (sum1 + sum2 + sum3 + sum4) / 1.2;
       // done.classList.toggle('done');
@@ -122,6 +122,9 @@
     console.log(sum1 + sum2 + sum3 + sum4);
     console.log(sumPrice());
     console.log(done.textContent = sumAll);
+
+
+
     document.querySelector('#ofer').onclick = sumPrice;
 
   </script>
