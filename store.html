@@ -30,7 +30,7 @@
 </head>
 
 <body>
-  <h1>Мини онлайн-магазин</h1>
+  <h1>Корзина</h1>
   <div>
     <div class="container">
       <div class="item">
@@ -41,7 +41,7 @@
         <p>Характеристики</p>
       </div>
       <div class="item">
-        <span id="sum1">12675</span><span> руб</span>
+        <span id="sum1">12000</span><span> руб</span>
       </div>
     </div>
     <div class="container">
@@ -53,20 +53,33 @@
         <p>Характеристики</p>
       </div>
       <div class="item">
-        <span id="sum2">7096</span><span> руб</span>
+        <span id="sum2">8000</span><span> руб</span>
       </div>
     </div>
 
     <div class="container">
       <div class="item">
-        <img class="image" src="./perif.jpg" alt="системный блок">
+        <img class="image" src="./perif.jpg" alt="Клавиатура и мышь">
       </div>
       <div class="item">
         <p>Клавиатура и мышь</p>
         <p>Характеристики</p>
       </div>
       <div class="item">
-        <span id="sum3">2767</span><span> руб</span>
+        <span id="sum3">3000</span><span> руб</span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="item">
+        <img class="image" src="./ups.jpg" alt="Источник бесперебойного питания">
+      </div>
+      <div class="item">
+        <p>Источник бесперебойного питания</p>
+        <p>Характеристики</p>
+      </div>
+      <div class="item">
+        <span id="sum4">7000</span><span> руб</span>
       </div>
     </div>
 
@@ -77,7 +90,7 @@
       <div class="item">
       </div>
       <div class="item">
-        <span id="sum">22538</span><span> руб</span>
+        <span id="sum">30000</span><span> руб</span>
       </div>
     </div>
 
@@ -93,17 +106,20 @@
     const sum1 = Number(document.querySelector('#sum1').innerHTML);
     const sum2 = Number(document.querySelector('#sum2').innerHTML);
     const sum3 = Number(document.querySelector('#sum3').innerHTML);
+    const sum4 = Number(document.querySelector('#sum4').innerHTML);
+
     let sumAll = 0;
-    let done = document.querySelector("#done");
+    // let done = document.querySelector("#done");
     function sumPrice() {
-      sumAll = (sum1 + sum2 + sum3) / 1.2;
-      done.classList.toggle('done');
+      sumAll = (sum1 + sum2 + sum3 + sum4) / 1.2;
+      // done.classList.toggle('done');
       return sumAll
     }
     console.log(sum1);
     console.log(sum2);
     console.log(sum3);
-    console.log(sum1 + sum2 + sum3);
+    console.log(sum4);
+    console.log(sum1 + sum2 + sum3 + sum4);
     console.log(sumPrice());
     console.log(done.textContent = sumAll);
     document.querySelector('#ofer').onclick = sumPrice;
