@@ -23,8 +23,9 @@
     button {
       background-color: greenyellow;
       border: 0;
-      */
     }
+
+    .done {}
   </style>
 </head>
 
@@ -83,7 +84,7 @@
     <div class="container"><button id="ofer">Использовать скидку 20%</button>
       <div class="item">Итого</div>
       <div class="item">
-        <span id="done"></span>
+        <span class="done" id="done"></span>
         <span> руб</span>
       </div>
     </div>
@@ -96,7 +97,7 @@
     let done = document.querySelector("#done");
     function sumPrice() {
       sumAll = (sum1 + sum2 + sum3) / 1.2;
-      // done.classList.toggle('done');
+      done.classList.toggle('done');
       return sumAll
     }
     console.log(sum1);
