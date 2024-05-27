@@ -1,134 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini store</title>
+    <style>
+      .container {
+        display: flex;
+        margin: 1%;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mini store</title>
-  <style>
-    .container {
-      display: flex;
-      margin: 1%;
-    }
+      .image {
+        width: 150px;
+      }
 
-    .image {
-      width: 150px;
-    }
+      .item {
+        width: 150px;
+        padding: 10px;
+      }
 
-    .item {
-      width: 150px;
-      padding: 10px;
-    }
+      button {
+        background-color: greenyellow;
+        border: 0;
+      }
+    </style>
+  </head>
 
-    button {
-      background-color: greenyellow;
-      border: 0;
-    }
+  <body>
+    <h1>Корзина</h1>
+    <div>
+      <div class="container">
+        <div class="item">
+          <img class="image" src="./monitor.jpg" alt="монитор" />
+        </div>
+        <div class="item">
+          <p>Монитор</p>
+          <p>Характеристики</p>
+        </div>
+        <div class="item"><span id="sum1">12000</span><span> руб</span></div>
+      </div>
+      <div class="container">
+        <div class="item">
+          <img class="image" src="./comp.jpg" alt="системный блок" />
+        </div>
+        <div class="item">
+          <p>Системный блок</p>
+          <p>Характеристики</p>
+        </div>
+        <div class="item"><span id="sum2">8000</span><span> руб</span></div>
+      </div>
 
-    .done {}
-  </style>
-</head>
+      <div class="container">
+        <div class="item">
+          <img class="image" src="./perif.jpg" alt="Клавиатура и мышь" />
+        </div>
+        <div class="item">
+          <p>Клавиатура и мышь</p>
+          <p>Характеристики</p>
+        </div>
+        <div class="item"><span id="sum3">3000</span><span> руб</span></div>
+      </div>
 
-<body>
-  <h1>Корзина</h1>
-  <div>
-    <div class="container">
-      <div class="item">
-        <img class="image" src="./monitor.jpg" alt="монитор">
+      <div class="container">
+        <div class="item">
+          <img
+            class="image"
+            src="./ups.jpg"
+            alt="Источник бесперебойного питания"
+          />
+        </div>
+        <div class="item">
+          <p>Источник бесперебойного питания</p>
+          <p>Характеристики</p>
+        </div>
+        <div class="item"><span id="sum4">7000</span><span> руб</span></div>
       </div>
-      <div class="item">
-        <p>Монитор</p>
-        <p>Характеристики</p>
-      </div>
-      <div class="item">
-        <span id="sum1">12000</span><span> руб</span>
-      </div>
-    </div>
-    <div class="container">
-      <div class="item">
-        <img class="image" src="./comp.jpg" alt="системный блок">
-      </div>
-      <div class="item">
-        <p>Системный блок</p>
-        <p>Характеристики</p>
-      </div>
-      <div class="item">
-        <span id="sum2">8000</span><span> руб</span>
-      </div>
-    </div>
 
-    <div class="container">
-      <div class="item">
-        <img class="image" src="./perif.jpg" alt="Клавиатура и мышь">
+      <div class="container">
+        <div class="item">
+          <p>Итого без учета скидки</p>
+        </div>
+        <div class="item"></div>
+        <div class="item"><span id="sum">30000</span><span> руб</span></div>
       </div>
-      <div class="item">
-        <p>Клавиатура и мышь</p>
-        <p>Характеристики</p>
-      </div>
-      <div class="item">
-        <span id="sum3">3000</span><span> руб</span>
-      </div>
-    </div>
 
-    <div class="container">
-      <div class="item">
-        <img class="image" src="./ups.jpg" alt="Источник бесперебойного питания">
-      </div>
-      <div class="item">
-        <p>Источник бесперебойного питания</p>
-        <p>Характеристики</p>
-      </div>
-      <div class="item">
-        <span id="sum4">7000</span><span> руб</span>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="item">
-        <p>Итого без учета скидки</p>
-      </div>
-      <div class="item">
-      </div>
-      <div class="item">
-        <span id="sum">30000</span><span> руб</span>
-      </div>
-    </div>
-
-    <div class="container"><button id="ofer">Использовать скидку 20%</button>
-      <div class="item">Итого</div>
-      <div class="item">
-        <span class="done" id="done"></span>
-        <span> руб</span>
+      <div class="container">
+        <button class="offer">Использовать скидку 20%</button>
+        <div class="item">Итого</div>
+        <div class="item">
+          <span id="done"></span>
+          <span> руб</span>
+        </div>
       </div>
     </div>
-  </div>
-  <script>
-    const sum1 = Number(document.querySelector('#sum1').innerHTML);
-    const sum2 = Number(document.querySelector('#sum2').innerHTML);
-    const sum3 = Number(document.querySelector('#sum3').innerHTML);
-    const sum4 = Number(document.querySelector('#sum4').innerHTML);
-
-    let sumAll = 0;
-
-    function sumPrice() {
-      sumAll = (sum1 + sum2 + sum3 + sum4) / 1.2;
-      // done.classList.toggle('done');
-      return sumAll
-    }
-    console.log(sum1);
-    console.log(sum2);
-    console.log(sum3);
-    console.log(sum4);
-    console.log(sum1 + sum2 + sum3 + sum4);
-    console.log(sumPrice());
-    console.log(done.textContent = sumAll);
+    <script>
 
 
+      const sum1 = Number(document.querySelector("#sum1").innerHTML);
+      const sum2 = Number(document.querySelector("#sum2").innerHTML);
+      const sum3 = Number(document.querySelector("#sum3").innerHTML);
+      const sum4 = Number(document.querySelector("#sum4").innerHTML);
+      const sumOffer = (sum1 + sum2+sum3+sum4)/1.2;
+      
+      console.log(sum1);
+      console.log(sum2);
+      console.log(sum3);
+      console.log(sum4);
+      console.log(sum1 + sum2 + sum3 + sum4);
+      console.log(sumOffer)
+      
+      const offer = document.getElementById("done");
 
-    document.querySelector('#ofer').onclick = sumPrice();
+function makeOffer() {
+  offer.innerText = sumOffer;
+}
 
-  </script>
-
-</body>
-
+document.querySelector(".offer").onclick = makeOffer;
+    </script>
+  </body>
 </html>
